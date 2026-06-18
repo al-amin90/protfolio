@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Nova News",
+    "description": "A modern news portal built with Next.js and Tailwind CSS for fast content delivery.",
+    "backImage": "/Project/novaNewsT.png",
+    "technologyStack": ["Next.js", "Tailwind", "TypeScript"],
+    "liveLink": "https://example.com/nova-news",
+    "gitRepo": "https://github.com/example/nova-news"
+  },
+  {
+    "name": "Neutorias",
+    "description": "A sleek dashboard UI for managing customer insights and analytics.",
+    "backImage": "/Project/neutoriasT.png",
+    "technologyStack": ["React", "Node.js", "MongoDB"],
+    "liveLink": "https://example.com/neutorias",
+    "gitRepo": "https://github.com/example/neutorias"
+  },
+  {
+    "name": "Journy",
+    "description": "A travel-focused web app designed to showcase destinations and booking experiences.",
+    "backImage": "/Project/journyT.png",
+    "technologyStack": ["React", "Firebase", "Styled Components"],
+    "liveLink": "https://example.com/journy",
+    "gitRepo": "https://github.com/example/journy"
+  }
+]

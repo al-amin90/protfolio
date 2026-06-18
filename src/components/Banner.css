@@ -1,0 +1,31 @@
+.imageProfile::after {
+    transform: rotate(-8deg);
+}
+
+.imageProfile::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+}
+
+.imageProfile::before {
+    transform: rotate(-18deg);
+}
+
+.imageProfile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+}
