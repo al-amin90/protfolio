@@ -1,4 +1,3 @@
-import logo from "/logo.png";
 import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
@@ -9,7 +8,7 @@ const Footer = () => {
       <div className="py-16 md:py-20  border-purple-400 border-t relative z-30 rounded-2xl bg-gradient-to-b from-[#ffffff0d] to-[#ffffff00]">
         <div className="text-gray-200 flex justify-center mx-auto flex-col max-w-44 cursor-pointer">
           <div>
-            <img src={logo} className="mx-auto" alt="" />
+            <img src={"/logo.png"} className="mx-auto" alt="" />
           </div>
         </div>
         <div className="max-w-[900px] mx-auto w-[95%]">

@@ -4,11 +4,12 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import BannerImg from "@/components/BannerImg";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
+      <Navbar />
       <Banner />
       <div
         className="bg-no-repeat"
@@ -20,7 +21,6 @@ export default function Home() {
       <Education />
       <Contact />
       <BannerImg />
-      <Footer />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 import SubHeading from "./SmallComponents/SubHeading";
-import email from "../assets/gmail.gif";
+
 import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
@@ -21,7 +21,7 @@ const Contact = () => {
         <div className="">
           <img
             className=" w-full h-[26rem] opacity-95 object-cover rounded-xl"
-            src={email}
+            src={"/gmail.gif"}
             alt=""
           />
         </div>

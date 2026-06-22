@@ -18,7 +18,7 @@ const TechnicalSkills = () => {
   return (
     <div
       id="skills"
-      className="max-w-[1480px] relative z-20 md:pt-4 font-inter  mx-auto w-[92%] mt-8 pb-16 md:pb-40"
+      className="max-w-[1480px] relative z-20 md:pt-4 font-inter  mx-auto w-[92%] pb-16 md:pb-40"
     >
       <div className="lg:block shape hidden"></div>
       <SubHeading title="Speciality"></SubHeading>
