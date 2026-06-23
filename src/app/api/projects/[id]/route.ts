@@ -14,6 +14,8 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  const { id } = await params;
+
   await dbConnect();
   const token = await getTokenFromReq(req);
   if (!token) {
@@ -33,9 +35,12 @@ export async function PUT(
   }
 
   const data = await req.json();
-  const project = await Project.findByIdAndUpdate(params.id, data, {
+  console.log(data);
+  const project = await Project.findByIdAndUpdate(id, data, {
     new: true,
   });
+
+  console.log(project);
   return NextResponse.json(project, { status: status.OK });
 }
 
@@ -43,6 +48,8 @@ export async function DELETE(
   _req: NextRequest,
   { params }: { params: { id: string } },
 ) {
+  const { id } = await params;
+
   await dbConnect();
   const token = await getTokenFromReq(_req);
   if (!token) {
@@ -61,6 +68,6 @@ export async function DELETE(
     );
   }
 
-  await Project.findByIdAndDelete(params.id);
+  await Project.findByIdAndDelete(id);
   return NextResponse.json(null, { status: status.NO_CONTENT });
 }

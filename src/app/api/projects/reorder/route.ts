@@ -12,6 +12,7 @@ async function getTokenFromReq(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   await dbConnect();
+
   const token = await getTokenFromReq(req);
   if (!token) {
     return NextResponse.json(
@@ -30,16 +31,23 @@ export async function POST(req: NextRequest) {
   }
 
   const { order } = await req.json();
-  if (!Array.isArray(order)) {
+
+  if (!order || !Array.isArray(order)) {
     return NextResponse.json(
-      { message: "Invalid payload" },
+      { message: "Invalid order data" },
       { status: status.BAD_REQUEST },
     );
   }
 
-  for (let i = 0; i < order.length; i++) {
-    await Project.findByIdAndUpdate(order[i], { order: i });
-  }
+  // Update order for each project
+  await Promise.all(
+    order.map((id: string, index: number) =>
+      Project.findByIdAndUpdate(id, { order: index + 1 }),
+    ),
+  );
 
-  return NextResponse.json({ message: "Reordered" }, { status: status.OK });
+  return NextResponse.json(
+    { message: "Order updated successfully" },
+    { status: status.OK },
+  );
 }
