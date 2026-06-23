@@ -18,14 +18,48 @@ const Contact = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-7 md:mt-12">
-        <div className="">
-          <img
-            className=" w-full h-[26rem] opacity-95 object-cover rounded-xl"
-            src={"/gmail.gif"}
-            alt=""
-          />
+        <div className="grid grid-cols-1  gap-0 order-2 md:order-1">
+          <div className="relative flex items-center justify-center flex-col">
+            <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
+              <div className="flex items-center gap-5">
+                <p className=" font-semibold text-white h-fit text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
+                  <HiOutlineMail />
+                </p>
+                <div>
+                  <h6 className="text-gray-50 text-lg ">Email Me</h6>
+                  <p className="text-gray-200 text-sm mt-2">
+                    ijesun30@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative flex mt-5 items-center justify-center flex-col">
+            <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
+              <div>
+                <p className=" font-semibold text-white text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
+                  <IoCallOutline />
+                </p>
+                <h6 className="text-gray-50 text-lg mt-4">Call Me</h6>
+                <p className="text-gray-200 text-sm mt-2">+8801752736250</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative flex mt-5 items-center justify-center flex-col">
+            <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
+              <div>
+                <p className=" font-semibold text-white text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
+                  <IoLocationOutline />
+                </p>
+                <h6 className="text-gray-50 text-lg mt-4">My Location</h6>
+                <p className="text-gray-200 text-sm mt-2">
+                  Kushtia, Khulna Division, Bangladesh
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <form className="text-white w-full text-2xl bg-gradient-to-t gap-4 p-5  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] border border-white/20">
+        <form className="order-1 md:order-2 text-white w-full text-2xl bg-gradient-to-t gap-4 p-5  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] border border-white/20">
           <div>
             <div className="text-3xl flex gap-x-6 justify-center my-3">
               <a
@@ -83,44 +117,6 @@ const Contact = () => {
             </button>
           </div>
         </form>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-5">
-        <div className="relative flex mt-5 items-center justify-center flex-col">
-          <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
-            <div>
-              <p className=" font-semibold text-white text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
-                <HiOutlineMail />
-              </p>
-              <h6 className="text-gray-50 text-lg mt-4">Email Me</h6>
-              <p className="text-gray-200 text-sm mt-2">ijesun30@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative flex mt-5 items-center justify-center flex-col">
-          <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
-            <div>
-              <p className=" font-semibold text-white text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
-                <IoCallOutline />
-              </p>
-              <h6 className="text-gray-50 text-lg mt-4">Call Me</h6>
-              <p className="text-gray-200 text-sm mt-2">+8801752736250</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative flex mt-5 items-center justify-center flex-col">
-          <div className="bg-gradient-to-t gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover: border shadow-2xl border-white/20 w-full ">
-            <div>
-              <p className=" font-semibold text-white text-2xl bg-gradient-to-t gap-4 p-2  justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] w-fit border border-white/20">
-                <IoLocationOutline />
-              </p>
-              <h6 className="text-gray-50 text-lg mt-4">My Location</h6>
-              <p className="text-gray-200 text-sm mt-2">
-                Kushtia, Khulna Division, Bangladesh
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Project, { ProjectItem } from "@/components/SmallComponents/Project";
 import toast from "react-hot-toast";
+import Navbar from "@/components/Navbar";
 
 const AllProject = () => {
   const [projects, setProjects] = useState<ProjectItem[]>([]);
@@ -29,11 +30,9 @@ const AllProject = () => {
     }
   }
 
-
   useEffect(() => {
     fetchProjects();
   }, []);
-
 
   if (loading) {
     return (
@@ -66,6 +65,8 @@ const AllProject = () => {
 
   return (
     <div className="overflow-hidden">
+      <Navbar />
+
       <div
         className="bg-no-repeat"
         style={{ backgroundImage: "url('/line.png')" }}

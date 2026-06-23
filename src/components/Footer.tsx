@@ -4,7 +4,7 @@ import { FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <section className="mt-14 md:mt-32 ">
+    <footer className=" ">
       <div className="py-16 md:py-20  border-purple-400 border-t relative z-30 rounded-2xl bg-gradient-to-b from-[#ffffff0d] to-[#ffffff00]">
         <div className="text-gray-200 flex justify-center mx-auto flex-col max-w-44 cursor-pointer">
           <div>
@@ -52,7 +52,7 @@ const Footer = () => {
           </aside>
         </footer>
       </div>
-    </section>
+    </footer>
   );
 };
 

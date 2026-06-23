@@ -19,33 +19,20 @@ const Navbar = () => {
         Home
       </Link>
       <Link
-        href="#skills"
-        className="hover:text-[#6F3EFE] transition-colors duration-300"
-        onClick={() => setIsMobileMenuOpen(false)}
-      >
-        Skills
-      </Link>
-      <a
-        href="#projects"
+        href="/all-projects"
         className="hover:text-[#6F3EFE] transition-colors duration-300"
         onClick={() => setIsMobileMenuOpen(false)}
       >
         Projects
-      </a>
-      <a
-        href="#education"
+      </Link>
+
+      <Link
+        href={"/"}
         className="hover:text-[#6F3EFE] transition-colors duration-300"
         onClick={() => setIsMobileMenuOpen(false)}
       >
-        Education
-      </a>
-      <a
-        href="#contact"
-        className="hover:text-[#6F3EFE] transition-colors duration-300"
-        onClick={() => setIsMobileMenuOpen(false)}
-      >
-        Contact
-      </a>
+        Blog
+      </Link>
     </>
   );
 

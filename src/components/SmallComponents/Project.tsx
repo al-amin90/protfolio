@@ -68,19 +68,17 @@ const Project = ({ p }: ProjectProps) => {
           alt={p.title}
           width={800}
           height={450}
-          className="rounded-xl w-full object-cover"
+          className="rounded-t-xl group-hover:rounded-xl w-full object-cover"
         />
+        <div className="group-hover:opacity-0 flex justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-b-2xl  border border-white/10 w-full transition-all duration-500">
+          <InfoContent p={p} />
+        </div>
 
         {/* Desktop hover card */}
-        <div className="hidden md:flex absolute justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-2xl border border-white/10 opacity-0 -bottom-16 group-hover:opacity-100 group-hover:bottom-5 -left-5 w-[550px] transition-all duration-500">
+        <div className="hidden md:flex absolute justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-2xl border border-white/10 opacity-0 -bottom-48 group-hover:opacity-100 group-hover:bottom-24 -left-4 w-[550px] transition-all duration-500">
           <InfoContent p={p} />
           <TbSquareRotatedFilled className="hidden md:block text-5xl text-white animate-spin flex-shrink-0" />
         </div>
-      </div>
-
-      {/* Mobile info card — always visible */}
-      <div className="md:hidden mt-3 p-4 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-2xl border border-white/10">
-        <InfoContent p={p} />
       </div>
     </div>
   );
