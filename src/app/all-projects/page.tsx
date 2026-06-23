@@ -78,7 +78,7 @@ const AllProject = () => {
 
           <div className="grid grid-cols-1 gap-5 mt-6 md:mt-16 lg:grid-cols-2">
             {projects.map((p) => (
-              <Project key={p.name} p={p} />
+              <Project key={p._id} p={p} />
             ))}
           </div>
         </div>

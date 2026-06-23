@@ -72,8 +72,8 @@ const Contact = () => {
                 name=""
                 id=""
                 placeholder="Message"
-                cols="20"
-                rows="7"
+                cols={20} // ← Number
+                rows={7}
               ></textarea>
             </div>
             <button className="w-full mt-2 flex items-center justify-center">

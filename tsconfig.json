@@ -13,8 +13,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"], // Example for a common alias
+      "@/components/*": ["./src/components/*"]
+    },
     "plugins": [
       {
         "name": "next"

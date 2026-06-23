@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import status from "http-status";
 import dbConnect from "@/lib/db/mongodb";
@@ -10,10 +11,7 @@ async function getTokenFromReq(req: NextRequest) {
   return authHeader?.split(" ")[1] || cookie;
 }
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
+export async function PUT(req: NextRequest, { params }: any) {
   const { id } = await params;
 
   await dbConnect();
@@ -44,10 +42,7 @@ export async function PUT(
   return NextResponse.json(project, { status: status.OK });
 }
 
-export async function DELETE(
-  _req: NextRequest,
-  { params }: { params: { id: string } },
-) {
+export async function DELETE(_req: NextRequest, { params }: any) {
   const { id } = await params;
 
   await dbConnect();

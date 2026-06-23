@@ -1,4 +1,5 @@
-import jwt from "jsonwebtoken";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import jwt, { JwtPayload } from "jsonwebtoken";
 import { IUserPayload } from "./auth.interface";
 
 export function signToken(
@@ -6,7 +7,12 @@ export function signToken(
   secret: string,
   expiresIn = "7d",
 ) {
-  return jwt.sign(payload as any, secret, { expiresIn });
+  // ✅ Check if secret exists
+  if (!secret) {
+    throw new Error("JWT secret is required");
+  }
+
+  return jwt.sign(payload, secret, { expiresIn } as jwt.SignOptions);
 }
 
 export function verifyToken(token: string, secret: string): IUserPayload {
