@@ -14,7 +14,7 @@ const skills = [
   { name: "React", image: "/Skills/rreact.png", color: "#61DAFB" },
   { name: "Redux", image: "/Skills/redux.svg", color: "#764ABC" },
   { name: "Next JS", image: "/Skills/NextJS-Dark.svg", color: "#fff" },
-  { name: "Node JS", image: "/Skills/node.png", color: "#339933" },
+  { name: "Node JS", image: "/Skills/nodejs-2.svg", color: "#339933" },
   { name: "ExpressJs", image: "/Skills/expresss.png", color: "#67686C" },
   { name: "JWT", image: "/Skills/jet.png", color: "#FB2271" },
   { name: "MongoDB", image: "/Skills/mongo.png", color: "#47A248" },
@@ -76,7 +76,6 @@ const TechnicalSkills = () => {
       ref={containerRef}
       className="max-w-[1480px] relative z-20 md:pt-4 font-inter mx-auto w-[92%] pb-16 md:pb-40 overflow-hidden"
     >
-      <div className=" shape "></div>
       <SubHeading title="Speciality"></SubHeading>
       <h2 className="text-center text-white text-3xl md:text-4xl z-50 font-inter font-semibold mt-4">
         My Technical Skills
@@ -156,7 +155,7 @@ const TechnicalSkills = () => {
       </AnimatePresence>
 
       {/* Skills Grid */}
-      <div className="flex w-[75%] mx-auto justify-center items-center flex-wrap mt-6 md:mt-16 gap-4">
+      <div className="flex w-full lg:w-[75%] mx-auto justify-center items-center flex-wrap mt-6 md:mt-16 gap-4">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -175,7 +174,7 @@ const TechnicalSkills = () => {
             }}
             onMouseEnter={() => setHoveredSkill(skill.name)}
             onMouseLeave={() => setHoveredSkill(null)}
-            className="relative w-[116px] h-[84px] bg-linear-to-b gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover:shadow-[#2a1454] shadow-black/20 border shadow-2xl border-white/20 inline-flex flashEffect overflow-hidden cursor-pointer group"
+            className="relative w-20 h-16 lg:w-[116px] lg:h-[84px] bg-linear-to-b gap-4 p-4 px-8 justify-between rounded-xl from-[#ffffff0d] to-[#ffffff00] hover:shadow-[#2a1454] shadow-black/20 border shadow-2xl border-white/20 inline-flex flashEffect overflow-hidden cursor-pointer group"
             style={{
               borderColor:
                 hoveredSkill === skill.name
@@ -188,7 +187,7 @@ const TechnicalSkills = () => {
               src={skill.image}
               alt={skill.name}
               fill
-              className="p-5 duration-500 object-contain group-hover:scale-110 transition-transform"
+              className="p-2 lg:p-5 duration-500 object-contain group-hover:scale-110 transition-transform"
             />
 
             {/* Hover Overlay */}

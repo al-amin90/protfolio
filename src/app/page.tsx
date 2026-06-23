@@ -12,10 +12,11 @@ export default function Home() {
       <Navbar />
       <Banner />
       <div
-        className="bg-no-repeat"
+        className="bg-no-repeat relative"
         style={{ backgroundImage: "url('/line.png')" }}
       >
         <TechnicalSkills />
+        <div className="lg:block shape hidden"></div>
         <Projects />
       </div>
       <Education />
