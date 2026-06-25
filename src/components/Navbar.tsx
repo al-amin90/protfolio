@@ -108,41 +108,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col gap-4 p-6 bg-[#1a1b26]/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl">
-          <Link
-            href="/"
-            className="text-gray-300 hover:text-[#6F3EFE] transition-colors duration-300 text-lg font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <a
-            href="#skills"
-            className="text-gray-300 hover:text-[#6F3EFE] transition-colors duration-300 text-lg font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Skills
-          </a>
-          <a
-            href="#projects"
-            className="text-gray-300 hover:text-[#6F3EFE] transition-colors duration-300 text-lg font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#education"
-            className="text-gray-300 hover:text-[#6F3EFE] transition-colors duration-300 text-lg font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Education
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-300 hover:text-[#6F3EFE] transition-colors duration-300 text-lg font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Contact
-          </a>
+          {navLinks}
         </div>
       </div>
     </nav>

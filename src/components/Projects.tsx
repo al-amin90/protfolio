@@ -86,7 +86,7 @@ const Projects = () => {
           className="p-[5px] border flex w-fit border-white/5 rounded-[10px] cursor-pointer btnBackground relative"
         >
           <span className="bg-gradient-to-r text-white font-inter from-[#6431FE] to-[#B696FF] px-9 py-3 rounded-[10px] w-fit gap-2 items-center inline-flex flashEffect relative overflow-hidden">
-            See All 55+
+            See All 20+
           </span>
         </Link>
       </div>

@@ -1,26 +1,24 @@
-"use client";
+// app/components/Banner.tsx (Server Component)
 import Image from "next/image";
 import { LuDownload } from "react-icons/lu";
-import "./Banner.css";
 import { BsEyeFill } from "react-icons/bs";
-import { ReactTyped } from "react-typed";
+import "./Banner.css";
+import TypedText from "./TypedText";
+import Link from "next/link";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
+// ✅ This is a Server Component by default (no "use client")
 const Banner = () => {
   return (
     <div className="max-w-[1480px] relative z-20 pt-4 font-inter mx-auto w-[92%] mt-10 md:mt-20 md:pb-40 pb-16">
       <div className="shape right"></div>
 
-      <div className="flex flex-col-reverse items-center justify-center md:flex-row gap-12 md:gap-20 text-white">
-        {/* Right side - Image */}
+      <div className="flex flex-col  lg:flex-row-reverse items-center justify-center md:flex-row gap-12 md:gap-20 text-white">
         {/* Right side - Image with Creative Animations */}
         <div className="mx-auto md:mr-12 relative image">
-          {/* Animated Ring 1 */}
+          {/* Animated Rings */}
           <div className="absolute inset-0 rounded-full border-2 border-[#6431FE]/30 animate-spin-slow -z-10"></div>
-
-          {/* Animated Ring 2 */}
           <div className="absolute inset-0 rounded-full border-2 border-[#B696FF]/20 animate-spin-slower -z-10"></div>
-
-          {/* Animated Ring 3 */}
           <div className="absolute inset-0 rounded-full border border-white/10 animate-pulse-ring -z-10"></div>
 
           {/* Floating Particles */}
@@ -39,17 +37,13 @@ const Banner = () => {
               width={400}
               height={500}
               className="rounded-[100px] relative z-10"
+              priority // ✅ Priority loading for above-the-fold image
             />
 
             {/* Overlay Shine Effect */}
             <div className="absolute inset-0 rounded-[100px] overflow-hidden z-20 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent animate-shine"></div>
             </div>
-
-            {/* Status Badge */}
-            {/* <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[#6431FE] to-[#B696FF] text-white text-xs font-medium px-4 py-2 rounded-full shadow-lg z-30 animate-bounce-slow">
-              🚀 Available
-            </div> */}
           </div>
         </div>
 
@@ -57,7 +51,7 @@ const Banner = () => {
         <div className="flex-1">
           {/* Name - Made bigger and more attractive */}
           <div className="text-left space-y-1 md:space-y-2">
-            <h6 className=" text-2xl md:text-5xl font-extrabold relative">
+            <h6 className="text-[2rem] text-center md:text-left  font-extrabold relative">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6431FE] via-[#B696FF] to-[#6431FE] bg-[length:200%] animate-gradient">
                 Al Amin Parvaje
               </span>
@@ -66,29 +60,11 @@ const Banner = () => {
             </h6>
           </div>
 
-          {/* Typing effect */}
-          <h1 className="text-xl md:text-2xl  font-bold mt-3">
-            A{" "}
-            <span className="bg-linear-to-r from-[#6431FE] to-[#B696FF] inline-block text-transparent bg-clip-text">
-              <ReactTyped
-                strings={[
-                  "Full Stack Developer",
-                  "Team Lead",
-                  "Problem Solver",
-                  "Tech Enthusiast",
-                ]}
-                typeSpeed={80}
-                backSpeed={50}
-                backDelay={2000}
-                loop
-                showCursor={true}
-                cursorChar="_"
-              />
-            </span>
-          </h1>
+          {/* ✅ Client Component for typing effect */}
+          <TypedText />
 
           {/* Description */}
-          <p className="text-sm md:text-base text-gray-300 mt-4 mb-7">
+          <p className="text-sm md:text-base text-center md:text-left text-gray-300 mt-4 lg:mt-2 mb-7">
             I am a skilled Full-Stack Developer with One Year of experience.
             Currently, I work at Al Jaami Technologies as a MERN Stack Team
             Lead, where I contribute to international, enterprise-level
@@ -102,17 +78,34 @@ const Banner = () => {
           </p>
 
           {/* Resume Button */}
-          <a
-            download
-            target="_blank"
-            href="https://drive.google.com/file/d/1TGd0jAVYkjqDw9ePyqMWrqpVefnq4XCy/view?usp=drivesdk"
-            className="p-[5px] border flex w-fit border-white/5 rounded-[10px] cursor-pointer btnBackground relative"
-          >
-            <span className="bg-linear-to-r text-white font-inter from-[#6431FE] to-[#B696FF] px-9 py-3 rounded-[10px] w-fit gap-2 items-center inline-flex flashEffect relative overflow-hidden">
-              <span>Resume</span>
-              <BsEyeFill />
-            </span>
-          </a>
+          <div className="flex items-center justify-center md:justify-start">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1TGd0jAVYkjqDw9ePyqMWrqpVefnq4XCy/view?usp=drivesdk"
+              className="group relative inline-block p-[5px] border border-white/5 rounded-[10px] cursor-pointer"
+            >
+              {/* Glow effect - positioned behind the button */}
+              <span className="absolute -inset-1 bg-gradient-to-r from-[#6431FE] to-[#B696FF] rounded-xl blur-0 group-hover:blur-2xl opacity-0 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
+
+              {/* Button content */}
+              <span className="relative flex items-center gap-3 px-9 py-3 bg-gradient-to-r from-[#6431FE] to-[#B696FF] rounded-[10px] text-white font-inter font-medium overflow-hidden">
+                {/* Left eye icon */}
+                <BiLeftArrow className="text-white text-sm group-hover:animate-pulse transition-all duration-300" />
+
+                {/* Text */}
+                <span className="relative z-10 font-semibold tracking-wider text-sm group-hover:tracking-widest transition-all duration-300">
+                  Resume
+                </span>
+
+                {/* Right eye icon with animation */}
+                <BiRightArrow className="text-white text-sm group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+
+                {/* Shine effect on hover */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

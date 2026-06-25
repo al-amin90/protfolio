@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Project, { ProjectItem } from "@/components/SmallComponents/Project";
+import { ProjectItem } from "@/components/SmallComponents/Project";
 import toast from "react-hot-toast";
 import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/SmallComponents/ProjectCard";
 
 const AllProject = () => {
   const [projects, setProjects] = useState<ProjectItem[]>([]);
@@ -76,9 +77,9 @@ const AllProject = () => {
             My All Projects
           </h2>
 
-          <div className="grid grid-cols-1 gap-5 mt-6 md:mt-16 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 mt-6 md:mt-16 lg:grid-cols-3">
             {projects.map((p) => (
-              <Project key={p._id} p={p} />
+              <ProjectCard key={p._id} p={p} />
             ))}
           </div>
         </div>

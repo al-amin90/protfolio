@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FiMonitor } from "react-icons/fi";
+import { FiImage, FiMonitor } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { TbSquareRotatedFilled } from "react-icons/tb";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const InfoContent = ({ p }: { p: ProjectItem }) => (
   <div className="w-full">
     <h1 className="text-base text-white font-semibold">{p.title}</h1>
     <p className="text-sm text-white/80 mt-1 leading-relaxed">
-      {p.description.slice(0, 100)}...
+      {p.description.slice(0, 180)}...
     </p>
 
     <div className="flex gap-1 flex-wrap mt-2">
@@ -58,30 +58,28 @@ const InfoContent = ({ p }: { p: ProjectItem }) => (
   </div>
 );
 
-const Project = ({ p }: ProjectProps) => {
+const ProjectCard = ({ p }: ProjectProps) => {
   return (
     <div className="flex flex-col">
       {/* Image + desktop hover overlay */}
-      <div className="group relative">
-        <Image
-          src={p.image}
-          alt={p.title}
-          width={800}
-          height={450}
-          className="rounded-t-xl group-hover:rounded-xl w-full object-cover"
-        />
-        <div className="group-hover:opacity-0 flex justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-b-2xl  border border-white/10 w-full transition-all duration-500">
-          <InfoContent p={p} />
+      <div className="flex-1 min-w-0">
+        <div className="relative w-full h-72 rounded-lg overflow-hidden bg-gradient-to-br from-[#6431FE]/10 to-[#B696FF]/10 mb-3">
+          {p.image ? (
+            <Image src={p.image} alt={p.title} fill className="object-cover" />
+          ) : (
+            <div className="flex items-center justify-center h-full text-gray-500">
+              <FiImage className="text-4xl" />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
-        {/* Desktop hover card */}
-        <div className="hidden md:flex absolute justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-2xl border border-white/10 opacity-0 -bottom-1 group-hover:opacity-100 group-hover:bottom-24 -left-4 w-[550px] transition-all duration-500">
+        <div className="group-hover:opacity-0 flex justify-between items-center gap-4 p-5 bg-gradient-to-r from-[#8850f71c] to-[#2a145425] backdrop-blur-2xl rounded-b-2xl  border border-white/10 w-full transition-all duration-500">
           <InfoContent p={p} />
-          <TbSquareRotatedFilled className="hidden md:block text-5xl text-white animate-spin flex-shrink-0" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Project;
+export default ProjectCard;
